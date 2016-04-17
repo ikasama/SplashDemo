@@ -25,6 +25,10 @@ public class SimpleSplashTask implements SplashRunnable {
      */
     public static final float ONE_GIGA_SECOND = 1000000000.0f;
 
+    /**
+     * flag that indicates whether a splash task completed
+     */
+    private boolean mSplashCompleted = false;
 
     /**
      * seconds during which splash screen is displayed
@@ -32,10 +36,14 @@ public class SimpleSplashTask implements SplashRunnable {
     private float mSplashSeconds = DEFAULT_SPLASH_SECONDS;
 
     /**
-     * flag that indicates whether a splash task completed
+     * sleep milliseconds per loop
      */
-    private boolean mSplashCompleted = false;
+    private long mSleepMilliseconds = DEFAULT_SLEEP_SECONDS_PER_LOOP;
 
+    /**
+     * flag whether to sleep while looping
+     */
+    private boolean mSleepPerLoop = true;
     /**
      * used to calculate delta time of looping
      */
@@ -66,15 +74,6 @@ public class SimpleSplashTask implements SplashRunnable {
      */
     private SplashRunnable.Callback mCallback;
 
-    /**
-     * sleep milliseconds per loop
-     */
-    private long mSleepMilliseconds = DEFAULT_SLEEP_SECONDS_PER_LOOP;
-
-    /**
-     * flag whether to sleep while looping
-     */
-    private boolean mSleepPerLoop = true;
 
     /**
      * enum representing the current status of the task
